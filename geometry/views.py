@@ -5,18 +5,18 @@ from django.urls import reverse
 
 def get_rectangle_area(request, width: int, height: int):
     rectangle_area = width*height
-    return HttpResponse(f"Площадь прямоугольника размером {width}x{height} равна {rectangle_area}")
+    return render(request, 'geometry/rectangle.html', {"width": width, "height": height, "rectangle_area": rectangle_area})
 
 
 def get_square_area(request, side: int):
     square_area = side**2
-    return HttpResponse(f"Площадь квадрата размером {side}x{side} равна {square_area}")
+    return render(request, 'geometry/square.html', {"side": side, "square_area": square_area})
 
 
 def get_circle_area(request, radius: int):
     PI = 3.14
     circle_area = PI*radius**2
-    return HttpResponse(f"Площадь круга с радиусом {radius} равна {circle_area}")
+    return render(request, 'geometry/circle.html', {"radius": radius, "circle_area": circle_area})
 
 
 def redirect_get_rectangle_area(request, width: int, height: int):
