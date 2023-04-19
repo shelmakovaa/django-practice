@@ -26,3 +26,7 @@ def todo_number(request, day: int):
         redirect_url = reverse('day-name', args=(day_number,))
         return HttpResponseRedirect(redirect_url)
     return HttpResponseNotFound(f"Нет такого дня недели - {day}")
+
+
+def start_page(request):
+    return render(request, 'week_days/greeting.html')
