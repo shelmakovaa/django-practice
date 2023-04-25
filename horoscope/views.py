@@ -78,30 +78,16 @@ def get_elements(request, element: str):
 
 def index(request):
     zodiacs = list(zodiac_dict)
-    """
-    <ol>
-        <li>aries</li>
-    </ol>
-    """
-    li_elements = ''
-    for elem in zodiacs:
-        redirect_path = reverse('horoscope-name', args=(elem,))
-        li_elements += f"<li> <a href='{redirect_path}'>{elem.title()}</a> </li>"
+    context = {'zodiacs': zodiacs}
+    # f"<li> <a href='{redirect_path}'>{elem.title()}</a> </li>"
 
-    response = f"""
-    <ol>
-    {li_elements}
-    </ol>
-    """
-    return HttpResponse(response)
+    return render(request, 'horoscope/index.html', context=context)
 
 
 def get_info_about_zodiac(request, sign_zodiac: str):
     description = zodiac_dict.get(sign_zodiac)
-    if description:
-        return render(request, 'horoscope/info_zodiac.html', {"description": description, "sign": sign_zodiac.title()})
-    else:
-        return HttpResponseNotFound('Page not found')
+    return render(request, 'horoscope/info_zodiac.html', {"description": description, "sign": sign_zodiac})
+
 
 
 def get_info_about_zodiac_by_number(request, sign_zodiac: int):

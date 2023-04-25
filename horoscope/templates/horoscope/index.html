@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+    <ul>
+    {% for zodiac in zodiacs %}
+        {% if forloop.first %}
+            <li><b>{{forloop.counter}} {{ zodiac|capfirst }}</b></li>
+        {% elif forloop.last %}
+            <li style="color:red">{{forloop.counter}} {{ zodiac|capfirst }}</li>
+        {% else %}
+            <li>{{forloop.counter}} {{ zodiac|capfirst }}</li>
+        {% endif %}
+
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
