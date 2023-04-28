@@ -8,13 +8,12 @@
     <ul>
     {% for zodiac in zodiacs %}
         {% if forloop.first %}
-            <li><b>{{forloop.counter}} {{ zodiac|capfirst }}</b></li>
+            <li><b>{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></b></li>
         {% elif forloop.last %}
-            <li style="color:red">{{forloop.counter}} {{ zodiac|capfirst }}</li>
+            <li style="color:red">{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
         {% else %}
-            <li>{{forloop.counter}} {{ zodiac|capfirst }}</li>
+            <li>{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
         {% endif %}
-
     {% endfor %}
     </ul>
 
