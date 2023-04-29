@@ -1,7 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.template.loader import render_to_string
 
 
 elements = {
@@ -87,7 +86,6 @@ def index(request):
 def get_info_about_zodiac(request, sign_zodiac: str):
     description = zodiac_dict.get(sign_zodiac)
     return render(request, 'horoscope/info_zodiac.html', {"description": description, "sign": sign_zodiac})
-
 
 
 def get_info_about_zodiac_by_number(request, sign_zodiac: int):
