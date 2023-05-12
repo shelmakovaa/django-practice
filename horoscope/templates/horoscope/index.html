@@ -4,14 +4,18 @@
 Меню
 {% endblock %}
 
+
 {% block content %}
+
+    {% include 'includes/navbar.html' %}
+
     {% for zodiac in zodiacs %}
         {% if forloop.first %}
-            <li><b>{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></b></li>
+            <li><b><a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></b></li>
         {% elif forloop.last %}
-            <li style="color:red">{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
+            <li style="color:red"><a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
         {% else %}
-            <li>{{forloop.counter}} <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
+            <li><a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a></li>
         {% endif %}
     {% endfor %}
 {% endblock %}
