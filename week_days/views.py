@@ -30,3 +30,7 @@ def todo_number(request, day: int):
 
 def start_page(request):
     return render(request, 'week_days/greeting.html')
+
+
+def table(request):
+    return render(request, 'week_days/pretty-table.html')
