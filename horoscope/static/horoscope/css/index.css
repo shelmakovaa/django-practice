@@ -1,5 +1,36 @@
 
 ul {
-    border-left: 5px double red;
-    background-color: #f1f1f1;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style-type: none;
+    background-color: #acb7ae;
+    width: 90%;
+    max-width: 35rem;
+    border-radius: 20px;
+    margin: 2rem auto;
+    padding: 1px;
+}
+
+ul li {
+    text-align: center;
+
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+}
+
+ul a {
+    color: #1d1e22
+}
+
+ul a:hover, ul a:active {
+    color: #F7C331;
+}
+
+h1 {
+    color: #6B7A8F;
+    text-align: center;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size:48px;
 }

@@ -1,4 +1,7 @@
 <nav>
-    <a href = '/horoscope'> Главная</a> |
+    <a href = '/horoscope'> Главная</a>
     <a href = 'https://stepik.org/catalog'> Источник</a>
+    {% for zodiac in zodiacs %}
+        <a href="{%url 'horoscope-name' sign_zodiac=zodiac%}">{{ zodiac|capfirst }}</a>
+    {% endfor %}
 </nav>

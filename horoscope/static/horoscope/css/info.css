@@ -1,4 +1,17 @@
 
+h3 {
+    color: #a28089;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 30px;
+    background-color: #1d1e22;
+    overflow-x: hidden;
+    padding-top: 2px;
+}
+
 h1 {
-    color: blue;
+    color: #6B7A8F;
+    text-align: center;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 40px;
 }
